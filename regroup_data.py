@@ -85,7 +85,7 @@ if __name__ == "__main__":
     parser.add_argument("collected_data_root", type=str, help="The root directory of the collected data.")
     parser.add_argument("cad_data_root", type=str, help="The root directory of the CAD data.")
     parser.add_argument("--line_width", type=float, default=0.8, help="Line width.")
-    parser.add_argument("-R", "--restart", action='store_true', default=False, help="Continue working.")
+    parser.add_argument("-R", "--restart", action='store_true', default=False, help="Restart.")
     parser.add_argument("--img_width", type=int, default=2160, help="Image width.")
     parser.add_argument("--img_height", type=int, default=1344, help="Image height.")
     parser.add_argument("-G", "--group", type=str, default='all', help="Data to be grouped. all: everything, pcd: only point cloud data, cd: only contour data")
