@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from svgpathtools import svg2paths
 
 
-def draw(output, paths, ax, fig, color=None):
+def draw(paths, ax, fig, color=None):
     for path in paths:
         x_data = [segment.start.real for segment in path] + [path[-1].end.real]
         y_data = [-segment.start.imag for segment in path] + [-path[-1].end.imag]
@@ -20,8 +20,6 @@ def draw(output, paths, ax, fig, color=None):
         spine.set_visible(False)
 
     fig.tight_layout(pad=0)
-
-    plt.savefig(output, format='svg', bbox_inches='tight', pad_inches=0)
 
 
 def contour_deformation(input, output, output_color=None, scale=1, length=100, randomness=4):
@@ -46,11 +44,14 @@ def contour_deformation(input, output, output_color=None, scale=1, length=100, r
         dpi_value = 100
         fig, ax = plt.subplots(figsize=(fig_width, fig_height), dpi=dpi_value)
 
-        draw(output, paths, ax, fig, color="black")
+        draw(paths, ax, fig, color="black")
+        plt.savefig(output, format='svg', bbox_inches='tight', pad_inches=0)
 
         if output_color:
             ax.cla()
-            draw(output_color, paths, ax, fig)
+            draw(paths, ax, fig)
+            plt.savefig(output_color, format='svg', bbox_inches='tight', pad_inches=0)
+    plt.close()
 
 
 if __name__ == "__main__":

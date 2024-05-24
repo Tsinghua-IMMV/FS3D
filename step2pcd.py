@@ -20,6 +20,7 @@ from tqdm import tqdm
 # sys.path.append(FREECAD_PATH)
 # import FreeCAD
 import freecad
+import FreeCAD as App
 import Part
 import Mesh
 
