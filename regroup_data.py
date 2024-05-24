@@ -53,6 +53,7 @@ def main(args):
         step_path = hash2path.get(sample_name)
         step_path = step_path if step_path else read_json(os.path.join(sample_path, 'meta.json'), 'MD5')
         if not step_path or not os.path.exists(step_path):
+            print(f'----- Failed to locate its STEP file: {sample_path}')
             continue
 
         step_basename = os.path.splitext(os.path.basename(step_path))[0]

@@ -11,6 +11,6 @@ pip install pymeshlab open3d matplotlib svgpathtools CairoSVG PyQt5 tqdm
 ```
 ### Construct the dataset
 ```
-In your cad_data_root, rename each sample folder to the MD5 hash code of its corresponding STEP file.
+To update your cad_data_root, rename each sample folder to the MD5 hash code of its corresponding STEP file.
 python regroup_data.py <your collected_data_root> <your cad_data_root>
 ```
